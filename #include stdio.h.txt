@@ -1,0 +1,113 @@
+#include <stdio.h>
+#include <string.h>
+
+// Estrutura para representar uma carta do Super Trunfo
+typedef struct {
+    char estado;
+    char codigoCarta[5]; // Ex: A01, B03 (4 caracteres + null terminator)
+    char nomeCidade[50];
+    int populacao;
+    float area;
+    float pib;
+    int pontosTuristicos;
+} Carta;
+
+int main() {
+    Carta carta1;
+    Carta carta2;
+
+    // --- Entrada de dados para a Carta 1 ---
+    printf("\n--- Inserir dados para a Carta 1 ---\n");
+    printf("Estado (A-H): ");
+    scanf(" %c", &carta1.estado);
+    // Limpa o buffer do teclado após a leitura do char
+    while (getchar() != '\n');
+
+    printf("Codigo da Carta (ex: A01): ");
+    scanf("%s", carta1.codigoCarta);
+    // Limpa o buffer do teclado após a leitura da string
+    while (getchar() != '\n');
+
+    printf("Nome da Cidade: ");
+    fgets(carta1.nomeCidade, sizeof(carta1.nomeCidade), stdin);
+    carta1.nomeCidade[strcspn(carta1.nomeCidade, "\n")] = 0; // Remove o newline adicionado por fgets
+
+    printf("Populacao: ");
+    scanf("%d", &carta1.populacao);
+    // Limpa o buffer do teclado após a leitura do int
+    while (getchar() != '\n');
+
+    printf("Area (em km²): ");
+    scanf("%f", &carta1.area);
+    // Limpa o buffer do teclado após a leitura do float
+    while (getchar() != '\n');
+
+    printf("PIB (em bilhoes de reais): ");
+    scanf("%f", &carta1.pib);
+    // Limpa o buffer do teclado após a leitura do float
+    while (getchar() != '\n');
+
+    printf("Numero de Pontos Turisticos: ");
+    scanf("%d", &carta1.pontosTuristicos);
+    // Limpa o buffer do teclado após a leitura do int
+    while (getchar() != '\n');
+
+    // --- Entrada de dados para a Carta 2 ---
+    printf("\n--- Inserir dados para a Carta 2 ---\n");
+    printf("Estado (A-H): ");
+    scanf(" %c", &carta2.estado);
+    // Limpa o buffer do teclado após a leitura do char
+    while (getchar() != '\n');
+
+    printf("Codigo da Carta (ex: A01): ");
+    scanf("%s", carta2.codigoCarta);
+    // Limpa o buffer do teclado após a leitura da string
+    while (getchar() != '\n');
+
+    printf("Nome da Cidade: ");
+    fgets(carta2.nomeCidade, sizeof(carta2.nomeCidade), stdin);
+    carta2.nomeCidade[strcspn(carta2.nomeCidade, "\n")] = 0; // Remove o newline adicionado por fgets
+
+    printf("Populacao: ");
+    scanf("%d", &carta2.populacao);
+    // Limpa o buffer do teclado após a leitura do int
+    while (getchar() != '\n');
+
+    printf("Area (em km²): ");
+    scanf("%f", &carta2.area);
+    // Limpa o buffer do teclado após a leitura do float
+    while (getchar() != '\n');
+
+    printf("PIB (em bilhoes de reais): ");
+    scanf("%f", &carta2.pib);
+    // Limpa o buffer do teclado após a leitura do float
+    while (getchar() != '\n');
+
+    printf("Numero de Pontos Turisticos: ");
+    scanf("%d", &carta2.pontosTuristicos);
+    // Limpa o buffer do teclado após a leitura do int
+    while (getchar() != '\n');
+
+    // --- Exibição de dados para a Carta 1 ---
+    printf("\n--- Carta 1 ---\n");
+    printf("Estado: %c\n", carta1.estado);
+    printf("Codigo: %s\n", carta1.codigoCarta);
+    printf("Nome da Cidade: %s\n", carta1.nomeCidade);
+    printf("Populacao: %d\n", carta1.populacao);
+    printf("Area: %.2f km²\n", carta1.area);
+    printf("PIB: %.2f bilhoes de reais\n", carta1.pib);
+    printf("Numero de Pontos Turisticos: %d\n", carta1.pontosTuristicos);
+
+    // --- Exibição de dados para a Carta 2 ---
+    printf("\n--- Carta 2 ---\n");
+    printf("Estado: %c\n", carta2.estado);
+    printf("Codigo: %s\n", carta2.codigoCarta);
+    printf("Nome da Cidade: %s\n", carta2.nomeCidade);
+    printf("Populacao: %d\n", carta2.populacao);
+    printf("Area: %.2f km²\n", carta2.area);
+    printf("PIB: %.2f bilhoes de reais\n", carta2.pib);
+    printf("Numero de Pontos Turisticos: %d\n", carta2.pontosTuristicos);
+
+    return 0;
+}
+
